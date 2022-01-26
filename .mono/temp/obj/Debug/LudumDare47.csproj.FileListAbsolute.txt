@@ -1,0 +1,21 @@
+/Users/oscarlambrun/projects/Godot/LudumDare47/.mono/temp/obj/Debug/LudumDare47.csprojAssemblyReference.cache
+/Users/oscarlambrun/projects/Godot/LudumDare47/.mono/temp/obj/Debug/LudumDare47.AssemblyInfoInputs.cache
+/Users/oscarlambrun/projects/Godot/LudumDare47/.mono/temp/obj/Debug/LudumDare47.AssemblyInfo.cs
+/Users/oscarlambrun/projects/Godot/LudumDare47/.mono/temp/bin/Debug/LudumDare47.dll
+/Users/oscarlambrun/projects/Godot/LudumDare47/.mono/temp/bin/Debug/LudumDare47.pdb
+/Users/oscarlambrun/projects/Godot/LudumDare47/.mono/temp/obj/Debug/LudumDare47.dll
+/Users/oscarlambrun/projects/Godot/LudumDare47/.mono/temp/obj/Debug/LudumDare47.pdb
+/Users/oscarlambrun/projects/Godot/LudumDare47 copie/.mono/temp/bin/Debug/LudumDare47.dll
+/Users/oscarlambrun/projects/Godot/LudumDare47 copie/.mono/temp/bin/Debug/LudumDare47.pdb
+/Users/oscarlambrun/projects/Godot/LudumDare47 copie/.mono/temp/obj/Debug/LudumDare47.csprojAssemblyReference.cache
+/Users/oscarlambrun/projects/Godot/LudumDare47 copie/.mono/temp/obj/Debug/LudumDare47.AssemblyInfoInputs.cache
+/Users/oscarlambrun/projects/Godot/LudumDare47 copie/.mono/temp/obj/Debug/LudumDare47.AssemblyInfo.cs
+/Users/oscarlambrun/projects/Godot/LudumDare47 copie/.mono/temp/obj/Debug/LudumDare47.dll
+/Users/oscarlambrun/projects/Godot/LudumDare47 copie/.mono/temp/obj/Debug/LudumDare47.pdb
+/Users/oscarlambrun/projects/Godot/LudumDare47 /.mono/temp/bin/Debug/LudumDare47.dll
+/Users/oscarlambrun/projects/Godot/LudumDare47 /.mono/temp/bin/Debug/LudumDare47.pdb
+/Users/oscarlambrun/projects/Godot/LudumDare47 /.mono/temp/obj/Debug/LudumDare47.csprojAssemblyReference.cache
+/Users/oscarlambrun/projects/Godot/LudumDare47 /.mono/temp/obj/Debug/LudumDare47.AssemblyInfoInputs.cache
+/Users/oscarlambrun/projects/Godot/LudumDare47 /.mono/temp/obj/Debug/LudumDare47.AssemblyInfo.cs
+/Users/oscarlambrun/projects/Godot/LudumDare47 /.mono/temp/obj/Debug/LudumDare47.dll
+/Users/oscarlambrun/projects/Godot/LudumDare47 /.mono/temp/obj/Debug/LudumDare47.pdb

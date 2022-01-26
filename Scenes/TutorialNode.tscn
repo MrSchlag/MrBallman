@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/8-BIT WONDER.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/LeftArrowKey.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/RightArrowKey.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/TutorialNode.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/SpaceKey.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 9
+font_data = ExtResource( 1 )
+
+[node name="TutorialNode" type="Node2D"]
+position = Vector2( 0, 12.2043 )
+script = ExtResource( 4 )
+
+[node name="LeftArrowKey" type="Sprite" parent="."]
+position = Vector2( -32, -126 )
+texture = ExtResource( 2 )
+
+[node name="RightArrowKey" type="Sprite" parent="."]
+position = Vector2( 32, -126 )
+texture = ExtResource( 3 )
+
+[node name="SpaceKey" type="Sprite" parent="."]
+visible = false
+position = Vector2( -1.27563, -126.011 )
+texture = ExtResource( 5 )
+
+[node name="Turn" type="Label" parent="."]
+margin_left = -149.813
+margin_top = -167.0
+margin_right = 150.187
+margin_bottom = -153.0
+custom_fonts/font = SubResource( 1 )
+text = "Turn as fast as  you can to charge"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaveName" type="Label" parent="."]
+visible = false
+margin_left = -146.152
+margin_top = -20.2431
+margin_right = 153.848
+margin_bottom = -6.24313
+custom_fonts/font = SubResource( 1 )
+text = "Turn as fast as  you can to charge"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shoot" type="Label" parent="."]
+visible = false
+margin_left = -136.677
+margin_top = -168.085
+margin_right = 138.323
+margin_bottom = -154.085
+custom_fonts/font = SubResource( 1 )
+text = "Now, use energy to kill enemies"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enjoy" type="Label" parent="."]
+visible = false
+margin_left = -137.288
+margin_top = -166.559
+margin_right = 137.712
+margin_bottom = -143.559
+custom_fonts/font = SubResource( 1 )
+text = "Now try to survive
+Enjoy  !"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

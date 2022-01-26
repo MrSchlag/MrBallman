@@ -1,0 +1,164 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/PivotScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/tileFlorrCool.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/tileFlorrCoolNormalMap.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/MobSpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/TutorialNode.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/ColorRectRail.gd" type="Script" id=7]
+[ext_resource path="res://Musics/ZboomZboom.wav" type="AudioStream" id=8]
+[ext_resource path="res://Musics/Shoot.wav" type="AudioStream" id=9]
+
+[sub_resource type="TileSet" id=1]
+0/name = "tileFlorrCool.png 0"
+0/texture = ExtResource( 2 )
+0/normal_map = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "tileFlorrCoolNormalMap.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform float size = 4;
+uniform float c = 0.0;
+uniform float w = 10.0;
+uniform vec4 color:hint_color;
+
+void fragment()
+{
+	vec2 dist = UV - vec2(0.5);
+	float j = smoothstep(0.99, 1.0, dot(dist, dist) * size * c);
+	j += 1.0 - smoothstep(0.99, 1.0, dot(dist, dist) * size * w);
+	
+	
+	//float j = smoothstep(c - w, c, dot(dist, dist)) - smoothstep(c, c + w, dot(dist, dist));
+	
+	
+	COLOR = vec4(1.0, 1.0, 1.0, 1.0 - j) * color;
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/size = 4.046
+shader_param/c = 6.486
+shader_param/w = 9.986
+shader_param/color = Color( 0.301961, 0.309804, 0.188235, 0.654902 )
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+uniform float size = 4.0;
+
+void fragment()
+{
+	vec2 dist = UV - vec2(0.5);
+	float j = smoothstep(0.95, 1.0, dot(dist, dist) * size);
+	COLOR = vec4(0.0, 0.0, 0.0, j);
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+shader_param/size = 4.0
+
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+
+uniform float size = 100;
+uniform vec4 color:hint_color;
+
+void fragment()
+{
+	vec2 dist = UV - vec2(0.5);
+	float j = smoothstep(0.70, 1.0, dot(dist, dist) * size);
+	COLOR = vec4(1.0, 1.0, 1.0, 1.0 - j) * color;
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 6 )
+shader_param/size = 100.0
+shader_param/color = Color( 0.917647, 0.67451, 0.545098, 1 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+editor_draw_limits = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( -327680, 0, 0, -327679, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0 )
+
+[node name="ColorRectRail" type="ColorRect" parent="."]
+material = SubResource( 3 )
+margin_left = -200.0
+margin_top = -200.0
+margin_right = 200.0
+margin_bottom = 200.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PivotScene" parent="." instance=ExtResource( 1 )]
+
+[node name="MobSpawner" parent="." instance=ExtResource( 5 )]
+
+[node name="BulletSpawn" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 5 )
+margin_left = -200.0
+margin_top = -200.0
+margin_right = 200.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectEnergy" type="ColorRect" parent="."]
+material = SubResource( 7 )
+margin_left = -65.0
+margin_top = -65.0
+margin_right = 65.0
+margin_bottom = 65.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialNode" parent="." instance=ExtResource( 6 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -20.0

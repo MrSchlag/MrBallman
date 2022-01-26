@@ -1,0 +1,110 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Sprites/BallMan.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/PivotScene.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Smoke1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/lightMap.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Sprite.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/aim.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/ShieldArea2D.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Line2D.gd" type="Script" id=8]
+[ext_resource path="res://Musics/kill.wav" type="AudioStream" id=9]
+[ext_resource path="res://Musics/ChargUp.wav" type="AudioStream" id=10]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="Curve" id=2]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 201.081 ), 0.0, 0.0, 0, 0, Vector2( 1, -9.72974 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=3]
+max_value = 100.0
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.982857, 100 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.264901 )
+colors = PoolColorArray( 0.917647, 0.67451, 0.545098, 0.192157, 0.917647, 0.67451, 0.545098, 1 )
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.748466 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.917647, 0.67451, 0.545098, 1 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 68.5341
+
+[node name="PivotScene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Pivot"]
+position = Vector2( 0, -70 )
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="Particles2DCruise" type="CPUParticles2D" parent="Pivot/Sprite"]
+visible = false
+material = SubResource( 1 )
+rotation = 1.55334
+scale = Vector2( 1.00285, 0.999755 )
+z_as_relative = false
+emitting = false
+amount = 100
+lifetime_randomness = 0.68
+local_coords = false
+texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 6.51
+direction = Vector2( 0, 0 )
+spread = 9.93
+gravity = Vector2( 0, 0 )
+initial_velocity = 19.13
+initial_velocity_random = 1.0
+angular_velocity = 2.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 2 )
+damping_curve = SubResource( 3 )
+
+[node name="Particles2DLast" type="CPUParticles2D" parent="Pivot/Sprite"]
+scale = Vector2( 1.00068, 1.00204 )
+emitting = false
+amount = 70
+lifetime = 0.5
+lifetime_randomness = 0.37
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 7.14
+direction = Vector2( 0, 0 )
+spread = 113.71
+gravity = Vector2( 0, 0 )
+color_ramp = SubResource( 4 )
+
+[node name="Light2D" type="Light2D" parent="Pivot/Sprite"]
+visible = false
+texture = ExtResource( 4 )
+color = Color( 1, 1, 1, 0.172549 )
+
+[node name="Line2D" type="Line2D" parent="Pivot/Sprite"]
+width = 14.0
+default_color = Color( 0.917647, 0.67451, 0.545098, 1 )
+gradient = SubResource( 6 )
+script = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pivot/Sprite"]
+stream = ExtResource( 9 )
+volume_db = -20.0
+
+[node name="SpriteAim" type="Sprite" parent="Pivot"]
+position = Vector2( 0, -150 )
+texture = ExtResource( 6 )
+
+[node name="ShieldArea2D" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldArea2D"]
+shape = SubResource( 5 )
+
+[node name="ChargeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -16.0

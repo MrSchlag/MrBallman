@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ChargUp.wav-aba056e871a8fd75eb389721bfedf10e.sample"
+
+[deps]
+
+source_file="res://Musics/ChargUp.wav"
+dest_files=[ "res://.import/ChargUp.wav-aba056e871a8fd75eb389721bfedf10e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

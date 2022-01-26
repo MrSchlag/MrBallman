@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=3 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/test.png-2b0b935732229e5bd5e655f2644b2498.stex"
+
+[sub_resource type="ProceduralSky" id=2]
+
+[resource]
+background_mode = 1
+background_sky = SubResource( 2 )
+background_color = Color( 0.164706, 0.156863, 0.156863, 1 )
+adjustment_enabled = true
+adjustment_color_correction = SubResource( 1 )

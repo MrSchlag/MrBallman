@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/oscarlambrun/projects/Godot/LudumDare47 /LudumDare47.csproj": {}
+  },
+  "projects": {
+    "/Users/oscarlambrun/projects/Godot/LudumDare47 /LudumDare47.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/oscarlambrun/projects/Godot/LudumDare47 /LudumDare47.csproj",
+        "projectName": "LudumDare47",
+        "projectPath": "/Users/oscarlambrun/projects/Godot/LudumDare47 /LudumDare47.csproj",
+        "packagesPath": "/Users/oscarlambrun/.nuget/packages/",
+        "outputPath": "/Users/oscarlambrun/projects/Godot/LudumDare47 /.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/oscarlambrun/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "runtimeIdentifierGraphPath": "/Library/Frameworks/Mono.framework/Versions/6.6.0/lib/mono/msbuild/Current/bin/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
